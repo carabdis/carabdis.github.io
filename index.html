@@ -1,132 +1,58 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Daijing Shi, Ph.D. student at Peking University. Research in computer architecture, dataflow design, memory-centric computing, and analog-digital heterogeneous systems.">
-  <meta name="theme-color" content="#f8f7f3">
-  <title>Daijing Shi | Architecture &amp; Dataflow</title>
-  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="./assets/style.css">
-  <script defer src="./assets/site.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Daijing Shi — computer architecture and dataflow design, Peking University.">
+<title>Daijing Shi</title>
+<link rel="stylesheet" href="./assets/style.css">
+<script defer src="./assets/site.js"></script>
 </head>
 <body>
-  <a class="skip" href="#main" data-zh="跳转到正文">Skip to content</a>
-  <header class="header">
-    <div class="header-inner">
-      <a class="wordmark" href="#home" aria-label="Daijing Shi home">DS<span class="mark-dot">.</span></a>
-      <nav aria-label="Main navigation">
-        <a href="#research" data-zh="研究方向">Research</a>
-        <a href="#publications" data-zh="论文与项目">Publications</a>
-        <a href="#contact" data-zh="联系">Contact</a>
-      </nav>
-      <button class="language" id="language" type="button" hidden aria-label="切换到中文">中文 <span aria-hidden="true">↗</span></button>
-    </div>
-  </header>
-  <main id="main">
-    <section class="intro wrap" id="home" aria-labelledby="name">
-      <div class="intro-label"><span class="status-dot" aria-hidden="true"></span><span data-zh="北京大学 · 博士研究生">Peking University · Ph.D. Student</span></div>
-      <h1 id="name">Daijing Shi <span lang="zh-CN">史代璟</span></h1>
-      <p class="headline" data-zh="以数据流为中心，设计高效计算架构。">Designing efficient architectures<br>around the flow of data.</p>
-      <div class="intro-bottom">
-        <div class="bio">
-          <p data-zh="我关注计算机体系结构与数据流设计，研究如何协同组织计算、存储与通信，为智能应用构建高效、可扩展的计算系统。">My research focuses on computer architecture and dataflow design. I study how to organize computation, memory, and communication together to build efficient, scalable computing systems for intelligent applications.</p>
-          <p data-zh="我的工作涵盖存储中心的可重构架构、连续模拟数据流，以及兼容存内运算的纠错机制。这些工作共同支撑我对模拟与数字异构计算系统的研究。">My work spans memory-centric reconfigurable architectures, continuous analog dataflows, and error correction compatible with in-memory operations. Together, these inform my research on analog-digital heterogeneous computing systems.</p>
-          <div class="intro-links">
-            <a class="primary-link" href="mailto:daijingshi@pku.edu.cn">daijingshi@pku.edu.cn <span aria-hidden="true">↗</span></a>
-            <a href="https://github.com/carabdis">GitHub <span aria-hidden="true">↗</span></a>
-          </div>
-        </div>
-        <aside class="focus-note" aria-label="Research focus">
-          <span class="eyebrow" data-zh="研究关键词">RESEARCH FOCUS</span>
-          <p data-zh="架构设计">Architecture</p>
-          <p data-zh="数据流设计">Dataflow</p>
-          <p data-zh="存储中心计算">Memory-centric computing</p>
-        </aside>
-      </div>
-    </section>
-
-    <section class="section wrap" id="research" aria-labelledby="research-title">
-      <div class="section-heading">
-        <span class="section-number">01 /</span>
-        <h2 id="research-title" data-zh="研究方向">Research interests</h2>
-      </div>
-      <div class="research-grid">
-        <article class="research-item">
-          <div class="mini-label" data-zh="架构与协作">ARCHITECTURE &amp; COORDINATION</div>
-          <h3 data-zh="存储中心的可重构计算">Memory-centric <br>reconfigurable computing</h3>
-          <p data-zh="通过分层互连、分布式数据路由和事件驱动编程，将数据处理局部化，并重叠计算与通信。面向多智能体强化学习、神经形态和图计算等具有阶段依赖的并行任务。">Hierarchical interconnects, distributed data routing, and event-driven programming for local data processing and overlapping computation with communication. Target workloads include multi-agent reinforcement learning, neuromorphic models, and graph processing.</p>
-          <a class="text-link" href="#paper-mcha" data-zh="相关工作：MCHA →">Related work: MCHA →</a>
-        </article>
-        <article class="research-item">
-          <div class="mini-label" data-zh="数据流与集成">DATAFLOW &amp; INTEGRATION</div>
-          <h3 data-zh="连续模拟与数模协同数据流">Continuous analog &amp; <br>heterogeneous dataflows</h3>
-          <p data-zh="以同构计算与高密度模拟缓存连接多级运算，减少中间数据的数字中转，并通过重采样控制噪声累积。关注模拟域内部的数据流完整性及其与数字系统衔接的开销。">Connecting computation stages with homogeneous compute-and-buffer units and dense analog storage. I study how resampling and local analog data movement support continuous processing, and how these paths can interface with digital systems.</p>
-          <a class="text-link" href="#paper-analog" data-zh="相关工作：模拟缓存与去噪 →">Related work: analog buffering →</a>
-        </article>
-        <article class="research-item">
-          <div class="mini-label" data-zh="可靠性与流水">RELIABILITY &amp; PIPELINING</div>
-          <h3 data-zh="可靠的存内计算数据流">Reliable <br>in-memory dataflows</h3>
-          <p data-zh="针对存储通道的多值累加输出，设计与存内乘累加运算兼容的非二进制纠错方法。结合解码器与流水组织，在保护计算结果的同时避免打断计算数据流。">Non-binary error correction for multivalued accumulation outputs, with coding compatible with in-memory multiply-accumulate operations. Decoder and pipeline design protect results while preserving the continuity of the computing dataflow.</p>
-          <a class="text-link" href="#paper-ecc" data-zh="相关工作：NB-LDPC →">Related work: NB-LDPC →</a>
-        </article>
-      </div>
-    </section>
-
-    <section class="section wrap" id="publications" aria-labelledby="publications-title">
-      <div class="section-heading">
-        <span class="section-number">02 /</span>
-        <h2 id="publications-title" data-zh="论文与研究项目">Selected research</h2>
-      </div>
-      <article class="paper" id="paper-mcha">
-        <div class="paper-meta"><span>2026</span><span class="tag" data-zh="架构">Architecture</span></div>
-        <div class="paper-content">
-          <p class="venue" data-zh="研究稿件 · 开源项目">Research manuscript · Open-source project</p>
-          <h3>MCHA: A Memory-Centric Hierarchical Architecture for Parallel-Sequential Computing</h3>
-          <p class="authors"><strong>Daijing Shi</strong>, Hongxiao Zhao, Yihan Fu, Zhan Chen, Jiayi Li, Yihang Zhu, Anjunyi Fan, Yaoyu Tao, Yuchao Yang, and Bonan Yan</p>
-          <p class="paper-summary" data-zh="将分层通信网络与数据驱动编程模型结合，减少不规则并行任务对全局存储的依赖。提供周期精确模拟器，评估多智能体、神经形态及图计算中的吞吐和扩展性。">A hierarchical communication fabric and data-driven programming model reduce dependence on global memory in irregular parallel workloads. A cycle-accurate simulator evaluates throughput and scalability across multi-agent, neuromorphic, and graph applications.</p>
-          <div class="paper-links"><a href="https://github.com/carabdis/MCHA" data-zh="代码与模拟器 ↗">Code &amp; simulator ↗</a></div>
-        </div>
-      </article>
-      <article class="paper" id="paper-analog">
-        <div class="paper-meta"><span>2026</span><span class="tag" data-zh="模拟数据流">Analog dataflow</span></div>
-        <div class="paper-content">
-          <p class="venue">Advanced Intelligent Systems</p>
-          <h3>Neuromorphic Denoising with Fully Analog Memristive In-Memory Computing</h3>
-          <p class="authors"><strong>Daijing Shi</strong>, Teng Zhang, Yuqi Li, Yaoyu Tao, Bonan Yan, and Yuchao Yang</p>
-          <p class="paper-summary" data-zh="以同构忆阻器单元承担计算与临时缓存，补全模拟域数据流，并通过输出重采样抑制噪声累积。采用 VAE 等模型的部分网络硬件映射与软硬件协同实验进行验证。">Homogeneous memristive units perform both computation and temporal buffering to complete analog dataflows, with output resampling to limit noise accumulation. Hardware-mapped portions of models including a VAE are evaluated in a hardware–software system.</p>
-          <div class="paper-links">
-            <a href="https://doi.org/10.1002/aisy.70419" data-zh="论文 ↗">Paper ↗</a>
-            <a href="https://github.com/carabdis/Neuromorphic-Denoising" data-zh="代码 ↗">Code ↗</a>
-          </div>
-        </div>
-      </article>
-      <article class="paper" id="paper-ecc">
-        <div class="paper-meta"><span>2026</span><span class="tag" data-zh="可靠计算">Reliable computing</span></div>
-        <div class="paper-content">
-          <p class="venue">npj Unconventional Computing</p>
-          <h3>Correcting processing-in-memory multiply-accumulate arithmetic errors with LDPC</h3>
-          <p class="authors"><strong>Daijing Shi</strong>, Yihan Fu, Yihang Zhu, Anjunyi Fan, Yaoyu Tao, Bonan Yan, and Yuchao Yang</p>
-          <p class="paper-summary" data-zh="改进基于有限域的 NB-LDPC 编码，统一保护存储数据与存内乘累加结果。结合解码器及连续流水设计，并在 40 nm 原型芯片上验证纠错能力与能效。">A finite-field NB-LDPC scheme unifies protection for stored data and in-memory MAC results. Decoder and continuous-pipeline design are validated on a 40 nm prototype chip for error correction and energy efficiency.</p>
-          <div class="paper-links">
-            <a href="https://doi.org/10.1038/s44335-026-00061-9" data-zh="论文 ↗">Paper ↗</a>
-            <a href="https://github.com/carabdis/NBLDPC_PIM" data-zh="代码 ↗">Code ↗</a>
-          </div>
-        </div>
-      </article>
-    </section>
-
-    <section class="contact wrap" id="contact" aria-labelledby="contact-title">
-      <div>
-        <span class="eyebrow" data-zh="联系">GET IN TOUCH</span>
-        <h2 id="contact-title" data-zh="欢迎交流架构与数据流设计。">Let’s talk architecture<br>and dataflow.</h2>
-      </div>
-      <div class="contact-links">
-        <a href="mailto:daijingshi@pku.edu.cn">daijingshi@pku.edu.cn <span aria-hidden="true">↗</span></a>
-        <a href="https://github.com/carabdis">github.com/carabdis <span aria-hidden="true">↗</span></a>
-      </div>
-    </section>
-  </main>
-  <footer class="footer wrap"><span>© <span id="year">2026</span> Daijing Shi</span><span data-zh="北京大学">Peking University</span><a href="#home" data-zh="返回顶部 ↑">Back to top ↑</a></footer>
+<main>
+<header>
+<button id="language" type="button" hidden aria-label="切换到中文">中文</button>
+<h1>Daijing Shi <span lang="zh-CN">史代璟</span></h1>
+<p><a href="mailto:daijingshi@pku.edu.cn">daijingshi@pku.edu.cn</a> · <a href="https://github.com/carabdis">GitHub</a></p>
+</header>
+<section>
+<h2 data-zh="个人简介">Biography</h2>
+<p data-zh="我是北京大学集成电路学院的博士研究生，在燕博南老师课题组开展研究，预计于 2027 年 6 月毕业。我的研究主要围绕计算架构与数据流设计展开。">I am a Ph.D. student in the School of Integrated Circuits at Peking University, working in Prof. Bonan Yan’s group. I expect to graduate in June 2027. My research focuses on computer architecture and dataflow design.</p>
+</section>
+<section>
+<h2 data-zh="教育经历">Education</h2>
+<ul>
+<li><strong data-zh="2022.09–2027.06（预计毕业）｜博士研究生">Sep. 2022–Jun. 2027 (expected) | Ph.D. student</strong><br>
+<span data-zh="北京大学 · 集成电路学院 · 集成电路设计系">Department of Integrated Circuit Design, School of Integrated Circuits, Peking University</span><br>
+<span data-zh="燕博南老师课题组">Research group: Prof. Bonan Yan</span></li>
+<li><strong data-zh="2018.09–2022.06｜本科">Sep. 2018–Jun. 2022 | Undergraduate study</strong><br>
+<span data-zh="北京大学 · 信息科学技术学院 · 微电子系">Department of Microelectronics, School of Electronics Engineering and Computer Science, Peking University</span><br>
+<span data-zh="专业：微电子科学与工程">Major: Microelectronics Science and Engineering</span></li>
+</ul>
+</section>
+<section>
+<h2 data-zh="研究兴趣">Research Interests</h2>
+<p data-zh="计算架构与数据流设计，侧重存储中心计算与数模异构计算系统。">Computer architecture and dataflow design for memory-centric and analog–digital heterogeneous computing.</p>
+</section>
+<section>
+<h2 data-zh="论文">Publications</h2>
+<ol>
+<li><strong>MCHA: A Memory-Centric Hierarchical Architecture for Parallel-Sequential Computing</strong><br>
+<b>Daijing Shi</b>, Hongxiao Zhao, Yihan Fu, Zhan Chen, Jiayi Li, Yihang Zhu, Anjunyi Fan, Yaoyu Tao, Yuchao Yang, and Bonan Yan.<br>
+<span data-zh="研究稿件，2026。">Research manuscript, 2026.</span>
+<a href="https://github.com/carabdis/MCHA">[Code]</a></li>
+<li><strong>Neuromorphic Denoising with Fully Analog Memristive In-Memory Computing</strong><br>
+<b>Daijing Shi</b>, Teng Zhang, Yuqi Li, Yaoyu Tao, Bonan Yan, and Yuchao Yang.<br>
+<em>Advanced Intelligent Systems</em>, 2026.
+<a href="https://doi.org/10.1002/aisy.70419">[Paper]</a>
+<a href="https://github.com/carabdis/Neuromorphic-Denoising">[Code]</a></li>
+<li><strong>Correcting processing-in-memory multiply-accumulate arithmetic errors with LDPC</strong><br>
+<b>Daijing Shi</b>, Yihan Fu, Yihang Zhu, Anjunyi Fan, Yaoyu Tao, Bonan Yan, and Yuchao Yang.<br>
+<em>npj Unconventional Computing</em>, 2026.
+<a href="https://doi.org/10.1038/s44335-026-00061-9">[Paper]</a>
+<a href="https://github.com/carabdis/NBLDPC_PIM">[Code]</a></li>
+</ol>
+</section>
+</main>
 </body>
 </html>
